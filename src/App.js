@@ -1,38 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import WeatherService from "./API/WeatherService";
 import "./App.css";
+import CityCard from "./components/CityCard";
 
 function App() {
-    const [isClicked, setIsClicked] = useState(false);
-    const [weather, setWeather] = useState({});
-    const [city, setCity] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
+    const [weather, setWeather] = useState([
+        { city: "moscow", weather: "" },
+        { city: "kazan", weather: "" },
+        { city: "togliatti", weather: "" },
+        { city: "herceg novi", weather: "" },
+    ]);
+    const [input, setInput] = useState("");
+
+    async function getWeatherByCity() {
+        weather.map(async (el) => {
+            const response = await WeatherService.weather(el.city);
+            const ind = weather.findIndex((c) => c.city === el.city);
+            weather[ind].weather = response.data;
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 1000);
+        });
+    }
 
     async function checkWeather(e) {
+        setIsLoading(true);
         e.preventDefault();
-        const response = await WeatherService.weather(city);
-        setIsClicked(true);
-        setWeather(response.data);
-        console.log(weather);
+        setWeather((prevValue) => {
+            return [...prevValue, { city: input }];
+        });
+        getWeatherByCity();
     }
-    console.log(city);
+
+    useEffect(() => {
+        getWeatherByCity();
+    }, []);
+
     return (
         <div className="App">
-            <form>
-                <input value={city} placeholder="Citi" onChange={(e) => setCity(e.target.value)} />
+            <h1 className="app-name">Weather app</h1>
+            {/* <form>
+                <input
+                    value={input}
+                    placeholder="Citi"
+                    onChange={(e) => setInput(e.target.value)}
+                />
                 <button onClick={checkWeather}> Check the weather</button>
-            </form>
-
-            {weather == undefined ? (
-                <p> Plese check your city name</p>
-            ) : (
-                isClicked &&
-                weather && (
-                    <div>
-                        <h1> Weather in {weather.name}: </h1>
-                        <h1>{weather.main.temp}</h1>
-                        <p>{weather.weather[0].description}</p>
-                    </div>
-                )
+            </form> */}
+            {!isLoading && (
+                <div className="list-of-city">
+                    <CityCard weather={weather} />
+                </div>
             )}
         </div>
     );
