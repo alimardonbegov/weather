@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import WeatherService from "./API/WeatherService";
 import "../src/styles/App.scss";
-import CityCard from "./components/CityCard";
+import WeatherService from "./API/WeatherService";
+import CityCard from "./components/UI/card/CityCardCurrent";
 import Header from "./components/Header";
 import CityPage from "./components/CityPage";
 
@@ -14,7 +14,7 @@ function App() {
         { city: "herceg novi", weather: "" },
     ]);
     const [input, setInput] = useState("");
-    const [town, setTown] = useState([{ name: "", weather: "" }]);
+    const [town, setTown] = useState([{ name: "", weather: "", forecast: "" }]);
 
     function renderPage() {
         setTown([{ name: "", weather: "" }]);
@@ -22,7 +22,7 @@ function App() {
 
     async function getWeatherByCity() {
         weather.map(async (el) => {
-            const response = await WeatherService.weather(el.city);
+            const response = await WeatherService.currentWeather(el.city);
             const ind = weather.findIndex((c) => c.city === el.city);
             weather[ind].weather = response.data;
             setTimeout(() => {
@@ -33,10 +33,16 @@ function App() {
 
     async function checkWeather(e) {
         e.preventDefault();
-
-        const response = await WeatherService.weather(input);
+        const responseCurrenWeather = await WeatherService.currentWeather(input);
+        const responseForecastWeather = await WeatherService.forecastWeather(input);
         setInput("");
-        setTown([{ name: input, weather: response.data }]);
+        setTown([
+            {
+                name: input,
+                weather: responseCurrenWeather.data,
+                forecast: responseForecastWeather.data,
+            },
+        ]);
     }
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default class WeatherService {
-    static async weather(city) {
+    static async currentWeather(city) {
         try {
             const response = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
                 params: {
@@ -16,9 +16,10 @@ export default class WeatherService {
             return e.message;
         }
     }
-    static async weatherForecast(city) {
+
+    static async forecastWeather(city) {
         try {
-            const response = await axios.get("api.openweathermap.org/data/2.5/forecast", {
+            const response = await axios.get("https://api.openweathermap.org/data/2.5/forecast", {
                 params: {
                     q: city,
                     units: "metric",
@@ -32,5 +33,3 @@ export default class WeatherService {
         }
     }
 }
-
-// params - фича axios, которая добавляет параметры к запросу с сервера.

@@ -1,153 +1,64 @@
-// файл с обнулением
-@import "nullstyle.scss";
-@import "../components/UI/input/MyInput.module.scss";
-
-// основные цвета
-$color1: #658caf;
-$color2: #296399;
-$color3: #c9e5ff;
-$color4: #91b3d2;
+@import "nullstyle.scss"; // файл с обнулением
+@import "../components/UI/input/MyInput.module.scss"; // style input
+@import "../components/UI/card/CityCard.module.scss"; // style card
+@import "colors.scss"; //colors
 
 body {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(180deg, #138eff 0%, #00e0ff 100%);
-    min-height: 100vh;
+    min-height: 95vh;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 6.25em;
 }
 .App {
-    padding: 20px 17em;
-}
-
-// header
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-// cards
-
-.app-name {
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 187.46%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    cursor: pointer;
+    padding: 2em 17em 0;
 }
 
 .list-of-city {
     display: flex;
     justify-content: space-between;
 }
+// Header.jsx
 
-.city_card {
-    width: 335px;
-    height: 303px;
-    background: $color3;
-    color: $color2;
-    box-shadow: 0px 34px 101px rgba(9, 0, 63, 0.38);
-    border-radius: 20px;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+// CityPage.jsx
+
+.container_city_page {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 80vh;
 }
-
-.city-card-content {
-    height: 100%;
-    display: relative;
-    padding: 50px;
-}
-.city-card-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.city-card-weather {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    .temp {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 64px;
-        line-height: 81px;
-        background: linear-gradient(180deg, $color2 54.68%, rgba(255, 255, 255, 0) 187.46%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-    }
-    .celsium {
-        color: $color4;
-        font-size: 64px;
-    }
-}
-
-.weather-desc {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: capitalize;
-    color: $color1;
-}
-
-.city-card-bottom {
-    display: absolute;
-    bottom: 0;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2px;
-}
-
-.weather-condition {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.weather-condition-text {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: $color1;
-}
-
-.bottom-image1 {
-    width: 17px;
-}
-.bottom-image2 {
-    width: 24px;
-}
-.bottom-image3 {
-    width: 17px;
-}
-
-// Weather Detail
 
 .container_detail {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 3em;
 }
 
 .block_detail {
     width: 60%;
     background-color: $color3;
     border-radius: 20px;
-    padding: 20px;
-    font-size: 1.5em;
+    padding: 1.25em;
+    font-size: 1.25em;
     color: $color2;
     td {
-        padding: 5px 100px 0 0;
+        padding: 0.25em 100px 0 0;
     }
+}
+
+.container_forecast {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1em;
 }

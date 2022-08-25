@@ -1,5 +1,7 @@
 The project was created in goal of study. Dedisgn was found from Figma with a little upadtive in term of project style and data API.
 
+Check that project by link: https://abegov-weather.herokuapp.com/
+
 There are lists of updates for the future:
 
 // global

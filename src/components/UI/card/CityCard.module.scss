@@ -1,0 +1,101 @@
+@import "../../../styles/colors.scss"; //colors
+
+.app-name {
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 187.46%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.city_card {
+    background: $color3;
+    color: $color2;
+    box-shadow: 0 2em 6em rgba(9, 0, 63, 0.38);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.current {
+    width: 23em;
+    height: 20em;
+}
+.forecast {
+    width: 19em;
+    height: 18em;
+}
+.city-card-content {
+    height: 100%;
+    display: relative;
+    padding: 3em;
+}
+.city-card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city-card-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .temp {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 81px;
+        background: linear-gradient(180deg, $color2 54.68%, rgba(255, 255, 255, 0) 187.46%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+    .celsium {
+        color: $color4;
+        font-size: 64px;
+    }
+}
+
+.weather-desc {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: $color1;
+}
+
+.city-card-bottom {
+    display: absolute;
+    bottom: 0;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+}
+
+.weather-condition {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.weather-condition-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color1;
+}
+
+.bottom-image1 {
+    width: 17px;
+}
+.bottom-image2 {
+    width: 24px;
+}
+.bottom-image3 {
+    width: 17px;
+}
