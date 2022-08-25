@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import WeatherService from "./API/WeatherService";
-import "./App.css";
+import "../src/styles/App.scss";
 import CityCard from "./components/CityCard";
+import Header from "./components/Header";
+import CityPage from "./components/CityPage";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -12,6 +14,11 @@ function App() {
         { city: "herceg novi", weather: "" },
     ]);
     const [input, setInput] = useState("");
+    const [town, setTown] = useState([{ name: "", weather: "" }]);
+
+    function renderPage() {
+        setTown([{ name: "", weather: "" }]);
+    }
 
     async function getWeatherByCity() {
         weather.map(async (el) => {
@@ -20,17 +27,16 @@ function App() {
             weather[ind].weather = response.data;
             setTimeout(() => {
                 setIsLoading(false);
-            }, 1000);
+            }, 500);
         });
     }
 
     async function checkWeather(e) {
-        setIsLoading(true);
         e.preventDefault();
-        setWeather((prevValue) => {
-            return [...prevValue, { city: input }];
-        });
-        getWeatherByCity();
+
+        const response = await WeatherService.weather(input);
+        setInput("");
+        setTown([{ name: input, weather: response.data }]);
     }
 
     useEffect(() => {
@@ -39,19 +45,16 @@ function App() {
 
     return (
         <div className="App">
-            <h1 className="app-name">Weather app</h1>
-            {/* <form>
-                <input
-                    value={input}
-                    placeholder="Citi"
-                    onChange={(e) => setInput(e.target.value)}
-                />
-                <button onClick={checkWeather}> Check the weather</button>
-            </form> */}
-            {!isLoading && (
+            <Header render={renderPage} value={input} onChange={setInput} onClick={checkWeather} />
+
+            {!isLoading && town[0].name === "" ? (
                 <div className="list-of-city">
                     <CityCard weather={weather} />
                 </div>
+            ) : town[0].name !== "" && town[0].weather !== undefined ? (
+                <CityPage town={town} />
+            ) : (
+                <h1> please check city name</h1>
             )}
         </div>
     );

@@ -4,12 +4,14 @@ import cloud from "../images/cloud.svg";
 import water from "../images/water.svg";
 
 function CityCard(props) {
-    return props.weather.map((el, index) => {
+    return props.weather.map((el) => {
         const icon = `http://openweathermap.org/img/wn/${el.weather.weather[0].icon}@2x.png`;
         return (
-            <div className="city_card" key={index}>
+            <div className="city_card">
                 <div className="city-card-content">
-                    <h2>{el.weather.name}</h2>
+                    <h2>
+                        {el.weather.name}, {el.weather.sys.country}
+                    </h2>
                     <div className="city-card-header">
                         <div>
                             <img src={icon} />
