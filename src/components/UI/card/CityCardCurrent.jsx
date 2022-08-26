@@ -19,14 +19,16 @@ function CityCardCurrent(props) {
                     </h2>
                     <div className="city-card-header">
                         <div>
-                            <img src={icon} />
+                            <img className="icon-weather-image" src={icon} />
                         </div>
                         <div className="city-card-weather">
                             <div>
                                 <span className="temp">{Math.floor(el.weather.main.temp)}</span>
                                 <span className="celsium">º</span>
                             </div>
-                            <div className="weather-desc">{el.weather.weather[0].description}</div>
+                            <div className="weather-desc">
+                                <h3>{el.weather.weather[0].description}</h3>
+                            </div>
                         </div>
                     </div>
                     <div className="city-card-bottom">
@@ -35,7 +37,7 @@ function CityCardCurrent(props) {
                                 <img className="bottom-image1" src={wind} />
                             </div>
                             <div className="weather-condition-text">
-                                {el.weather.wind.speed} m/s
+                                {el.weather.wind.speed.toFixed(1)} m/s
                             </div>
                         </div>
                         <div className="weather-condition">
@@ -52,8 +54,6 @@ function CityCardCurrent(props) {
                                 {el.weather.main.humidity} %
                             </div>
                         </div>
-
-                        {/* <h3>{new Date(el.weather.dt * 1000).toLocaleString()}</h3> */}
                     </div>
                 </div>
             </div>

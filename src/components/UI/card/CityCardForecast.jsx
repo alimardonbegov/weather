@@ -27,7 +27,7 @@ function CityCardForecast(props) {
                             <div style={{ paddingTop: "3px" }}>
                                 <img className="bottom-image1" src={wind} />
                             </div>
-                            <div className="weather-condition-text">{el.wind} m/s</div>
+                            <div className="weather-condition-text">{el.wind.toFixed(1)} m/s</div>
                         </div>
                         <div className="weather-condition">
                             <div>

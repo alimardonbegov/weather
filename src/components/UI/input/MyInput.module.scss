@@ -27,13 +27,6 @@ $your-pink: #91b3d2;
         }
     }
 
-    &:not(:checked),
-    // &:checked {
-    //     + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before {
-    //         content: "Thank You! \1F60A";
-    //     }
-    // }
-
     &:not(:checked) + .c-formContainer {
         .c-form__input:required:valid ~ .c-form__toggle {
             pointer-events: none;
