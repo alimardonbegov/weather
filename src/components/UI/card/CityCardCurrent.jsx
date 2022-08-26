@@ -7,7 +7,12 @@ function CityCardCurrent(props) {
     return props.weather.map((el) => {
         const icon = `http://openweathermap.org/img/wn/${el.weather.weather[0].icon}@2x.png`;
         return (
-            <div className="city_card current">
+            <div
+                className="city_card"
+                onClick={(e) => {
+                    props.openCard(e, el.weather.name);
+                }}
+            >
                 <div className="city-card-content">
                     <h2>
                         {el.weather.name}, {el.weather.sys.country}

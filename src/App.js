@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "../src/styles/App.scss";
 import WeatherService from "./API/WeatherService";
 import CityCard from "./components/UI/card/CityCardCurrent";
 import Header from "./components/Header";
 import CityPage from "./components/CityPage";
+import geterateResult from "./utils/getForecastByDay";
+import Background from "./components/UI/backgorund/Backgorund";
+import Loader from "./components/UI/loader/Loader";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,9 +18,11 @@ function App() {
     ]);
     const [input, setInput] = useState("");
     const [town, setTown] = useState([{ name: "", weather: "", forecast: "" }]);
+    let forecastByDay = [];
 
     function renderPage() {
-        setTown([{ name: "", weather: "" }]);
+        setTown([{ name: "", weather: "", forecast: "" }]);
+        setInput("");
     }
 
     async function getWeatherByCity() {
@@ -31,18 +36,31 @@ function App() {
         });
     }
 
-    async function checkWeather(e) {
+    async function checkWeather(e, cityName) {
         e.preventDefault();
-        const responseCurrenWeather = await WeatherService.currentWeather(input);
-        const responseForecastWeather = await WeatherService.forecastWeather(input);
-        setInput("");
-        setTown([
-            {
-                name: input,
-                weather: responseCurrenWeather.data,
-                forecast: responseForecastWeather.data,
-            },
-        ]);
+        console.log(cityName);
+        const responseCurrenWeather = await WeatherService.currentWeather(cityName);
+        const responseForecastWeather = await WeatherService.forecastWeather(cityName);
+        if (cityName === "") {
+            console.log("input is empty ");
+        }
+        if (responseCurrenWeather === "error" || responseForecastWeather === "error") {
+            console.log("Request Error");
+        } else {
+            setInput("");
+            setTown([
+                {
+                    name: cityName,
+                    weather: responseCurrenWeather.data,
+                    forecast: responseForecastWeather.data,
+                },
+            ]);
+        }
+    }
+
+    if (town[0].forecast.list) {
+        forecastByDay = geterateResult(town[0].forecast.list);
+        console.log(forecastByDay);
     }
 
     useEffect(() => {
@@ -51,17 +69,24 @@ function App() {
 
     return (
         <div className="App">
-            <Header render={renderPage} value={input} onChange={setInput} onClick={checkWeather} />
-
-            {!isLoading && town[0].name === "" ? (
+            <Header
+                render={renderPage}
+                value={input}
+                onChange={setInput}
+                onClick={(e) => checkWeather(e, input)}
+            />
+            {!isLoading && town[0].name === "" ? ( //если идет загрузка данных и поиск по городу не задан
                 <div className="list-of-city">
-                    <CityCard weather={weather} />
+                    <CityCard weather={weather} openCard={checkWeather} />
                 </div>
-            ) : town[0].name !== "" && town[0].weather !== undefined ? (
-                <CityPage town={town} />
+            ) : town[0].name !== "" &&
+              //  && town[0].weather !== undefined
+              forecastByDay.length > 0 ? ( // если задан поиск по городу, данные получены с сервера и
+                <CityPage town={town} forecastByDay={forecastByDay} />
             ) : (
-                <h1> please check city name</h1>
+                <Loader />
             )}
+            <Background />
         </div>
     );
 }

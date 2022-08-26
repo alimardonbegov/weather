@@ -13,7 +13,7 @@ export default class WeatherService {
             return response;
         } catch (e) {
             console.log(e.message);
-            return e.message;
+            return "error";
         }
     }
 
@@ -29,7 +29,7 @@ export default class WeatherService {
             return response;
         } catch (e) {
             console.log(e.message);
-            return e.message;
+            return "error";
         }
     }
 }

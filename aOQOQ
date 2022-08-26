@@ -1,0 +1,71 @@
+[33mcommit 940e4970a20664ece5bcc82fa1c81dad88de1e92[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Thu Aug 25 19:25:29 2022 +0300
+
+    add forecast information on City page
+
+[33mcommit 3d42279977f1c2f20cece67ee7182776b9e44f5d[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Thu Aug 25 16:34:44 2022 +0300
+
+    add search and additional weater info
+
+[33mcommit 259358f7d32ca475ba5a8e5cd965719e9a86ff8f[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 22:55:00 2022 +0300
+
+    style weather cards
+
+[33mcommit 639a51daf42b6fc6818b1c4f8174931feab80ec8[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 15:36:04 2022 +0300
+
+    add weather API, check current weather by city name
+
+[33mcommit 5a15673b6a7a77ae749ec3cd42402b2885247daa[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 15:32:47 2022 +0300
+
+    add weather API, check current weather by city name
+
+[33mcommit 60bd7abb3e5ccbeee0bc27cc6e473e8d54fffdee[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 14:13:51 2022 +0300
+
+    add check useState work
+
+[33mcommit 9139c8b94e5056411f5c5db2ef6e9097fb1ac8b8[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 14:13:32 2022 +0300
+
+    add check useState work
+
+[33mcommit 652689b004ea5fa02be65900cd19fa31fa5da873[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 14:11:22 2022 +0300
+
+    add check useState work
+
+[33mcommit 1c335fb1943427333d2d7162c14650fbc36f3299[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 14:01:02 2022 +0300
+
+    add build folder (2 try)
+
+[33mcommit 5e7d684cf9acdbb12d646af6dff5dd4294799e21[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 13:59:44 2022 +0300
+
+    add build folder
+
+[33mcommit b5a37477efdbeb078e159b4483064b7070d07e2d[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 13:57:49 2022 +0300
+
+    deploy version
+
+[33mcommit 6192a77f9fc981653e234646db587747c290ddfd[m
+Author: Alimardon <alimardon007@gmail.com>
+Date:   Wed Aug 24 11:43:34 2022 +0300
+
+    Initialize project using Create React App

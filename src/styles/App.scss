@@ -1,7 +1,13 @@
 @import "nullstyle.scss"; // файл с обнулением
 @import "../components/UI/input/MyInput.module.scss"; // style input
 @import "../components/UI/card/CityCard.module.scss"; // style card
-@import "colors.scss"; //colors
+@import "../components/UI/backgorund/Background.module.scss"; //background
+
+// основные цвета
+$color1: #658caf;
+$color2: #296399;
+$color3: #c9e5ff;
+$color4: #91b3d2;
 
 body {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -11,7 +17,11 @@ body {
 }
 
 h1 {
-    font-size: 6.25em;
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 2em;
 }
 .App {
     padding: 2em 17em 0;
@@ -27,10 +37,24 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
+}
+
+.app-name {
+    background: linear-gradient(180deg, white 0%, rgba(255, 255, 255, 0) 187.46%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    cursor: pointer;
 }
 
 // CityPage.jsx
+
+.app-forecast {
+    color: $color3;
+    font-size: 3em;
+}
 
 .container_city_page {
     display: flex;
@@ -42,23 +66,24 @@ h1 {
 .container_detail {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 .block_detail {
-    width: 60%;
+    width: 50%;
     background-color: $color3;
     border-radius: 20px;
     padding: 1.25em;
     font-size: 1.25em;
     color: $color2;
     td {
-        padding: 0.25em 100px 0 0;
+        padding: 0.25em 6em 0 0;
     }
 }
 
 .container_forecast {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1em;
+    // display: grid;
+    // grid-template-columns: repeat(5, 20%);
+    display: flex;
+    justify-content: space-between;
 }

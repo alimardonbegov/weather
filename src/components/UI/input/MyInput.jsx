@@ -12,6 +12,7 @@ function MyInput(props) {
                         class="c-form__input"
                         placeholder="city name"
                         type="text"
+                        autocomplete="off"
                         name="town"
                         value={props.value}
                         onChange={(e) => props.onChange(e.target.value)}

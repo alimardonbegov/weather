@@ -7,12 +7,12 @@ function CityPage(props) {
     return (
         <div className="container_city_page">
             <div className="container_detail">
-                <CityCardCurrent weather={props.town} />
+                <CityCardCurrent weather={props.town} openCard={props.openCard} />
                 <CityDetails town={props.town} />
             </div>
-            <h1> Forecast</h1>
+            <h2 className="app-forecast"> 5 day weather forecast:</h2>
             <div className="container_forecast">
-                <CityCardForecast forecast={props.town[0].forecast} />
+                <CityCardForecast forecastByDay={props.forecastByDay} />
             </div>
         </div>
     );

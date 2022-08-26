@@ -46,7 +46,7 @@ $your-pink: #91b3d2;
 .c-form,
 .c-form__toggle {
     width: 20em;
-    height: 6.25em;
+    height: 4.25em;
 }
 
 .c-formContainer {
@@ -86,7 +86,7 @@ $your-pink: #91b3d2;
     align-items: center;
     justify-content: center;
     svg {
-        font-size: 60px;
+        font-size: 3em;
     }
     &::before {
         font-size: 1.75em;
@@ -158,6 +158,6 @@ $your-pink: #91b3d2;
     width: 5em;
     background-color: $salmon;
     svg {
-        font-size: 50px;
+        font-size: 1.3em;
     }
 }
