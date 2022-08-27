@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useMemo } from "react";
 import "../src/styles/App.scss";
 import WeatherService from "./API/WeatherService";
-import CityCard from "./components/UI/card/CityCardCurrent";
 import Header from "./components/Header";
 import CityPage from "./components/CityPage";
 import geterateResult from "./utils/getForecastByDay";
 import Background from "./components/UI/backgorund/Backgorund";
 import Loader from "./components/UI/loader/Loader";
+import CityCardCurrent from "./components/UI/card/CityCardCurrent";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -38,7 +38,6 @@ function App() {
 
     async function checkWeather(e, cityName) {
         e.preventDefault();
-        console.log(cityName);
         const responseCurrenWeather = await WeatherService.currentWeather(cityName);
         const responseForecastWeather = await WeatherService.forecastWeather(cityName);
         if (cityName === "") {
@@ -60,7 +59,6 @@ function App() {
 
     if (town[0].forecast.list) {
         forecastByDay = geterateResult(town[0].forecast.list);
-        console.log(forecastByDay);
     }
 
     useEffect(() => {
@@ -77,7 +75,7 @@ function App() {
             />
             {!isLoading && town[0].name === "" ? ( //если идет загрузка данных и поиск по городу не задан
                 <div className="list-of-city">
-                    <CityCard weather={weather} openCard={checkWeather} />
+                    <CityCardCurrent weather={weather} openCard={checkWeather} />
                 </div>
             ) : town[0].name !== "" &&
               //  && town[0].weather !== undefined

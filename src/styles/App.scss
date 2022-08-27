@@ -180,16 +180,13 @@ h2 {
         font-size: 0.6em;
     }
 
-    // .App {
-    //     padding: 2em 13em 0;
-    // }
     h2 {
         font-size: 2.6em;
     }
     .city_card {
         width: 30em;
         height: 24em;
-        margin-bottom: 4em;
+        margin-bottom: 8em;
     }
 
     .city-card-content {
@@ -201,7 +198,7 @@ h2 {
     }
 
     .weather-condition-text {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .icon-weather-image {
@@ -216,83 +213,177 @@ h2 {
     .bottom-image3 {
         width: 1.2em * 2;
     }
-
-    // .forecast {
-    //     font-size: 0.8em;
-    // }
 }
 
 @media (max-width: 856px) and (min-width: 700px) {
     body {
-        font-size: 0.55em;
+        font-size: 0.6em;
+    }
+    .App {
+        padding: 2em 10em 0;
     }
 
-    .App {
-        padding: 2em 9em;
-    }
     h2 {
-        font-size: 1.5em;
+        font-size: 2.6em;
     }
     .city_card {
-        width: 17.5em;
-        height: 17em;
+        width: 30em;
+        height: 24em;
+        margin-bottom: 6em;
     }
 
     .city-card-content {
-        padding: 1.5em;
+        padding: 3em;
     }
 
     .weather-desc {
-        font-size: 1.1em;
-    }
-    .icon-weather-image {
-        width: 7em;
-    }
-    .weather-condition-text {
-        font-size: 1.1em;
+        font-size: 2em;
     }
 
-    .forecast {
-        font-size: 0.8em;
+    .weather-condition-text {
+        font-size: 1.8em;
+    }
+
+    .icon-weather-image {
+        width: 10.5em;
+    }
+    .bottom-image1 {
+        width: 1.25em * 2;
+    }
+    .bottom-image2 {
+        width: 1.96em * 2;
+    }
+    .bottom-image3 {
+        width: 1.2em * 2;
     }
 }
 
 @media (max-width: 699px) and (min-width: 547px) {
     body {
-        font-size: 0.55em;
+        font-size: 0.5em;
     }
-
     .App {
-        padding: 2em 9em;
+        padding: 2em 8em 0;
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 2.6em;
     }
-
     .city_card {
-        width: 17.5em;
-        height: 17em;
+        width: 30em;
+        height: 25em;
+        margin-bottom: 5%;
     }
 
     .city-card-content {
-        padding: 1.5em;
+        padding: 3em;
     }
 
     .weather-desc {
-        font-size: 1.1em;
-    }
-    .icon-weather-image {
-        width: 7em;
-    }
-    .weather-condition-text {
-        font-size: 1.1em;
+        font-size: 2em;
     }
 
-    .forecast {
-        font-size: 0.8em;
+    .weather-condition-text {
+        font-size: 1.8em;
+    }
+
+    .icon-weather-image {
+        width: 10.5em;
+    }
+    .bottom-image1 {
+        width: 1.25em * 2;
+    }
+    .bottom-image2 {
+        width: 1.96em * 2;
+    }
+    .bottom-image3 {
+        width: 1.2em * 2;
     }
 }
 
-@media (max-width: 546px) {
+@media (max-width: 546px) and (min-width: 400px) {
+    body {
+        font-size: 0.5em;
+    }
+    .App {
+        padding: 2em 8em 0;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+    .city_card {
+        min-width: 20em;
+        width: 48%;
+        height: auto;
+        margin-bottom: 5%;
+    }
+
+    .city-card-content {
+        padding: 2em;
+    }
+
+    .weather-desc {
+        font-size: 1.5em;
+    }
+
+    .weather-condition-text {
+        font-size: 1.3em;
+    }
+
+    .icon-weather-image {
+        width: 9em;
+    }
+    .bottom-image1 {
+        width: 1.25em * 1.2;
+    }
+    .bottom-image2 {
+        width: 1.96em * 1.2;
+    }
+    .bottom-image3 {
+        width: 1.2em * 1.2;
+    }
+}
+
+@media (max-width: 399px) {
+    body {
+        font-size: 0.5em;
+    }
+    .App {
+        padding: 2em 10em 0;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+    .city_card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 5%;
+    }
+
+    .city-card-content {
+        padding: 2em 3em;
+    }
+
+    .weather-desc {
+        font-size: 1.8em;
+    }
+
+    .weather-condition-text {
+        font-size: 1.7em;
+    }
+
+    .icon-weather-image {
+        width: 10em;
+    }
+    .bottom-image1 {
+        width: 1.25em * 1.2;
+    }
+    .bottom-image2 {
+        width: 1.96em * 1.2;
+    }
+    .bottom-image3 {
+        width: 1.2em * 1.2;
+    }
 }
