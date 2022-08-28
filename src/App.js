@@ -7,6 +7,7 @@ import geterateResult from "./utils/getForecastByDay";
 import Background from "./components/UI/backgorund/Backgorund";
 import Loader from "./components/UI/loader/Loader";
 import CityCardCurrent from "./components/UI/card/CityCardCurrent";
+import Footer from "./components/UI/footer/Footer";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -76,10 +77,9 @@ function App() {
             {!isLoading && town[0].name === "" ? ( //если идет загрузка данных и поиск по городу не задан
                 <div className="list-of-city">
                     <CityCardCurrent weather={weather} openCard={checkWeather} />
+                    <Footer />
                 </div>
-            ) : town[0].name !== "" &&
-              //  && town[0].weather !== undefined
-              forecastByDay.length > 0 ? ( // если задан поиск по городу, данные получены с сервера и
+            ) : town[0].name !== "" && forecastByDay.length > 0 ? ( // если задан поиск по городу, данные получены с сервера и
                 <CityPage town={town} forecastByDay={forecastByDay} />
             ) : (
                 <Loader />

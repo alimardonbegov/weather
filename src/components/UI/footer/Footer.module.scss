@@ -1,0 +1,54 @@
+$color1: #658caf;
+$color2: #296399;
+$color3: #c9e5ff;
+$color4: #91b3d2;
+
+.footer {
+    text-align: center;
+    margin: auto auto 0.6em;
+    // font-size: em;
+    width: 100%;
+}
+
+.text_footer {
+    font-size: 1.5em;
+    margin: 0.5em;
+    text-align: center;
+    color: white !important;
+}
+
+.heroku {
+    color: $color2 !important;
+    padding: 0;
+    &:hover {
+        color: $color3 !important;
+    }
+}
+.btn_social {
+    padding: 0 1em;
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+}
+.icon_move {
+    transition: 0.3s;
+}
+
+.icon_move:hover {
+    transform: translate(0, -10px);
+    transition: 0.3s;
+}
+
+.fa-telegram:hover {
+    color: #229ed9;
+}
+.fa-linkedin-in:hover {
+    color: #0e76a8;
+}
+
+.fa-instagram:hover {
+    color: #e1306c;
+}
+
+.fa-envelope:hover {
+    color: #fbbc05;
+}

@@ -10,12 +10,7 @@ $color3: #c9e5ff;
 $color4: #91b3d2;
 
 body {
-    // min-height: 95vh;
-    background:
-    //  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        // linear-gradient(180deg, #138eff, #00e0ff 100%) center no-repeat fixed;
-        linear-gradient(#138eff, #00e0ff) center no-repeat fixed;
-
+    background: linear-gradient(#138eff, #00e0ff) center no-repeat fixed;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -34,6 +29,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    min-height: 80vh;
 }
 // Header.jsx
 
@@ -191,7 +187,7 @@ h2 {
 
     .city_card {
         width: 18.5em;
-        height: auto;
+        height: 18em;
     }
 
     .icon-weather-image {
@@ -503,7 +499,7 @@ h2 {
     .city_card {
         min-width: 20em;
         width: 48%;
-        height: auto;
+        // height: auto;
     }
 
     .header {
