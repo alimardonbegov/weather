@@ -7,10 +7,7 @@ function Header(props) {
             <div onClick={props.render}>
                 <h1 className="app-name">Weather app</h1>
             </div>
-
-            <form>
-                <MyInput value={props.value} onChange={props.onChange} onClick={props.onClick} />
-            </form>
+            <MyInput value={props.value} onChange={props.onChange} onClick={props.onClick} />
         </div>
     );
 }

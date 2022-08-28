@@ -10,9 +10,12 @@ $color3: #c9e5ff;
 $color4: #91b3d2;
 
 body {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        linear-gradient(180deg, #138eff 0%, #00e0ff 100%);
-    min-height: 95vh;
+    // min-height: 95vh;
+    background:
+    //  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        // linear-gradient(180deg, #138eff, #00e0ff 100%) center no-repeat fixed;
+        linear-gradient(#138eff, #00e0ff) center no-repeat fixed;
+
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -94,8 +97,6 @@ h2 {
 }
 
 // MEDIA
-@media (min-width: 1800px) {
-}
 
 @media (max-width: 1799px) and(min-width: 1600px) {
     body {
@@ -203,6 +204,10 @@ h2 {
 
     .weather-desc {
         font-size: 1.1em;
+    }
+
+    .c-formContainer {
+        width: 66%;
     }
 
     ////////////////////////////// CITY PAGE //////////////////////////////
@@ -342,6 +347,10 @@ h2 {
         margin-bottom: 8em;
     }
 
+    .c-formContainer {
+        width: 50%;
+    }
+
     .block_detail {
         width: 50%;
     }
@@ -419,6 +428,10 @@ h2 {
         margin-bottom: 8em;
     }
 
+    .c-formContainer {
+        width: 50%;
+    }
+
     .block_detail {
         width: 50%;
     }
@@ -493,6 +506,20 @@ h2 {
         height: auto;
     }
 
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .app-name {
+        font-size: 11.5vw;
+    }
+
+    .c-formContainer {
+        margin-top: 3em;
+        width: 100%;
+    }
+
     .list-of-city .city_card {
         margin-bottom: 5%;
     }
@@ -556,6 +583,8 @@ h2 {
             font-size: 3.5em;
         }
     }
+
+    // search
 }
 
 @media (max-width: 399px) {
@@ -574,6 +603,20 @@ h2 {
         width: 100%;
         height: auto;
         margin-bottom: 5%;
+    }
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .app-name {
+        font-size: 8.5vw;
+    }
+
+    .c-formContainer {
+        margin-top: 3em;
+        width: 100%;
+        height: 40%;
     }
 
     .container_detail {

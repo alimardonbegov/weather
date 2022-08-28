@@ -4,41 +4,9 @@ $salmon: #658caf;
 $white: #c9e5ff;
 $your-pink: #91b3d2;
 
-.c-checkbox {
-    display: none;
-
-    &:checked + .c-formContainer {
-        .c-form {
-            width: 37.5em;
-        }
-
-        .c-form__toggle {
-            visibility: hidden;
-            opacity: 0;
-            transform: scale(0.7);
-        }
-
-        .c-form__input,
-        .c-form__buttonLabel {
-            transition: 0.2s 0.1s;
-            visibility: visible;
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    &:not(:checked) + .c-formContainer {
-        .c-form__input:required:valid ~ .c-form__toggle {
-            pointer-events: none;
-            cursor: default;
-        }
-    }
-}
-
 .c-formContainer,
 .c-form,
 .c-form__toggle {
-    width: 20em;
     height: 4.25em;
 }
 
@@ -49,19 +17,18 @@ $your-pink: #91b3d2;
 
 .c-form,
 .c-form__toggle {
-    position: absolute;
     border-radius: 6.25em;
     background-color: $white;
-    transition: 0.2s;
+}
+.c-formContainer {
+    width: 68%;
 }
 
 .c-form {
-    right: 0%;
-    transform: translateX(0%);
     padding: 0.625em;
     box-sizing: border-box;
     box-shadow: 0 0.125em 0.3125em rgba($black, 0.3);
-    width: 12em;
+    width: auto;
 
     // position form inputs
     display: flex;
@@ -71,20 +38,12 @@ $your-pink: #91b3d2;
 .c-form__toggle {
     color: $salmon;
     top: 0;
-    cursor: pointer;
     z-index: 1;
     width: 100%;
     // position message
     display: flex;
     align-items: center;
     justify-content: center;
-    svg {
-        font-size: 3em;
-    }
-    &::before {
-        font-size: 1.75em;
-        content: attr(data-title);
-    }
 }
 
 .c-form__input,
@@ -99,10 +58,6 @@ $your-pink: #91b3d2;
 .c-form__input,
 .c-form__buttonLabel {
     font-size: 1.75em;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.7);
-    transition: 0s;
 }
 
 .c-form__input {
@@ -110,21 +65,8 @@ $your-pink: #91b3d2;
     height: 100%;
     width: 100%;
     padding: 0 0.714em;
-
     &::placeholder {
         color: currentColor;
-    }
-
-    &:required:valid {
-        color: $salmon;
-
-        + .c-form__buttonLabel {
-            color: $white;
-
-            &::before {
-                pointer-events: initial;
-            }
-        }
     }
 }
 
@@ -132,21 +74,11 @@ $your-pink: #91b3d2;
     color: $cornflower-lilac;
     height: 100%;
     width: auto;
-
-    // accepts click events
-    &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        cursor: pointer;
-    }
+    margin: 0 0 0 0.357em;
 }
 
 .c-form__button {
     color: inherit;
-    padding: 0;
     height: 100%;
     width: 5em;
     background-color: $salmon;
