@@ -4,18 +4,22 @@ import { getPopulation } from "../utils/getPopulation";
 import { getVisibility } from "../utils/getVisibility";
 
 function CityDetails(props) {
+    const localTime = new Date();
     const cond = props.town[0].weather;
     const cond2 = props.town[0].forecast;
+    console.log(cond2);
+    console.log(new Date(cond.dt * 1000).toUTCString());
+
     const details = [
         { "Feels like": cond.main.feels_like + " º" },
         { High: cond.main.temp_max + " º" },
         { Low: cond.main.temp_min + " º" },
         { Pressure: cond.main.pressure + " hPa" },
         { Visibility: getVisibility(cond.visibility) },
-        { "Local time": formatAMPM(new Date(cond.dt * 1000)) },
-        { Sunrise: formatAMPM(new Date(cond.sys.sunrise * 1000)) },
-        { Sunset: formatAMPM(new Date(cond.sys.sunset * 1000)) },
-        { Population: getPopulation(cond2.city.population) },
+        // { "Local time": formatAMPM(new Date(cond.dt * 1000)) }, // it shows the user's time, not the city's
+        // { Sunrise: formatAMPM(new Date(cond.sys.sunrise * 1000)) },// it shows the user's time, not the city's
+        // { Sunset: formatAMPM(new Date(cond.sys.sunset * 1000)) },// it shows the user's time, not the city's
+        // { Population: getPopulation(cond2.city.population) }, // this can be showed with the above information
     ];
 
     return (

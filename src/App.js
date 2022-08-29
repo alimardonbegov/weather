@@ -12,10 +12,10 @@ import Footer from "./components/UI/footer/Footer";
 function App() {
     const [isLoading, setIsLoading] = useState(true);
     const [weather, setWeather] = useState([
-        { city: "moscow", weather: "" },
-        { city: "kazan", weather: "" },
-        { city: "togliatti", weather: "" },
-        { city: "herceg novi", weather: "" },
+        { city: "New York", weather: "" },
+        { city: "London", weather: "" },
+        { city: "Moscow", weather: "" },
+        { city: "Beijing", weather: "" },
     ]);
     const [input, setInput] = useState("");
     const [town, setTown] = useState([{ name: "", weather: "", forecast: "" }]);
