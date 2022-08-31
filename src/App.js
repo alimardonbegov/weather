@@ -33,7 +33,7 @@ function App() {
             weather[ind].weather = response.data;
             setTimeout(() => {
                 setIsLoading(false);
-            }, 500);
+            }, 1000);
         });
     }
 

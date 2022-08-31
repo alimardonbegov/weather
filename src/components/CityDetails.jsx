@@ -7,8 +7,6 @@ function CityDetails(props) {
     const localTime = new Date();
     const cond = props.town[0].weather;
     const cond2 = props.town[0].forecast;
-    console.log(cond2);
-    console.log(new Date(cond.dt * 1000).toUTCString());
 
     const details = [
         { "Feels like": cond.main.feels_like + " º" },
@@ -25,9 +23,9 @@ function CityDetails(props) {
     return (
         <div className="block_detail">
             <table>
-                {details.map((el) => {
+                {details.map((el, index) => {
                     return (
-                        <tr>
+                        <tr key={index}>
                             <td>{Object.keys(el)[0]}</td>
                             <td>{Object.values(el)[0]}</td>
                         </tr>
