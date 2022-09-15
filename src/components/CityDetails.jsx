@@ -15,14 +15,16 @@ function CityDetails(props) {
     return (
         <div className="block_detail">
             <table>
-                {details.map((el, index) => {
-                    return (
-                        <tr key={index}>
-                            <td>{Object.keys(el)[0]}</td>
-                            <td>{Object.values(el)[0]}</td>
-                        </tr>
-                    );
-                })}
+                <tbody>
+                    {details.map((el, index) => {
+                        return (
+                            <tr key={index}>
+                                <td>{Object.keys(el)[0]}</td>
+                                <td>{Object.values(el)[0]}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
             </table>
         </div>
     );
