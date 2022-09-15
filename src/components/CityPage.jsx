@@ -1,4 +1,5 @@
 import React from "react";
+import geterateResult from "../utils/getForecastByDay";
 import CityDetails from "./CityDetails";
 import CityCardCurrent from "./UI/card/CityCardCurrent";
 import CityCardForecast from "./UI/card/CityCardForecast";
