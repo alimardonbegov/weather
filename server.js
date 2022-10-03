@@ -9,7 +9,12 @@ const app = express();
 // if ((process.env.NODE_ENV = "production")) {
 app.use(express.static("build"));
 app.get("*", (req, res) => {
-    req.sendFile(path.resolve(__dirname, "build", "index.html"));
+    //  if (port == process.env.PORT) {
+    //      req.sendFile(path.resolve(__dirname, "build", "index.html"));
+    //  }
+    //  if (port == 5000) {
+    req.sendFile(path.resolve(__dirname, "public", "index.html"));
+    //  }
 });
 // }
 

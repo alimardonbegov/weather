@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import WeatherService from "../API/WeatherService";
+
 const initialState = {
     weather: [
         { city: "New York", weather: "" },
@@ -33,7 +34,9 @@ export const fetchWeather = createAsyncThunk(
     "weather/fetchWeather",
     async ({ dispatch, getState }) => {
         try {
-            const weather = getState(state.weather.weather);
+            // const weather = getState(state.weather.weather);
+            const weather = initialState.weather;
+
             const result = justFetchWeather(weather);
             return setTimeout(() => {
                 //  console.log("set time out finished");
