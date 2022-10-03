@@ -15,6 +15,7 @@ export function fetchWeather(weather) {
                 const response = await WeatherService.currentWeather(el.city);
                 const ind = weather.findIndex((c) => c.city === el.city);
                 weather[ind].weather = response.data;
+                console.log(123);
 
                 setTimeout(() => {
                     dispatch({ type: FETCH_WEATHER, payload: weather });

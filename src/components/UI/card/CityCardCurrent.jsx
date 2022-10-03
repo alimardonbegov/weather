@@ -5,7 +5,7 @@ import water from "../../../images/water.svg";
 
 function CityCardCurrent(props) {
     return props.weather.map((el, index) => {
-        const icon = `http://openweathermap.org/img/wn/${el.weather.weather[0].icon}@2x.png`;
+        const icon = `https://openweathermap.org/img/wn/${el.weather.weather[0].icon}@2x.png`;
         return (
             <div
                 key={index}

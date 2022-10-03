@@ -8,7 +8,7 @@ function Footer() {
                 <p className={cl.text_footer}> Weather App </p>
                 <p className={cl.text_footer}>Made by Alimardon</p>
                 <p className={cl.text_footer}>
-                    <a className={cl.heroku} href="http://abegov.herokuapp.com/" target="_blank">
+                    <a className={cl.heroku} href="https://abegov.herokuapp.com/" target="_blank">
                         abegov.herokuapp.com
                     </a>
                 </p>

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { fetchWeather, fetchSearchWeather } from "./redux/actions";
 import "../src/styles/App.scss";
 import geterateResult from "./utils/getForecastByDay";
 import Header from "./components/Header";
@@ -11,26 +10,38 @@ import Loader from "./components/UI/loader/Loader";
 import CityCardCurrent from "./components/UI/card/CityCardCurrent";
 import Footer from "./components/UI/footer/Footer";
 
-function App(props) {
+import { fetchWeather } from "./redux/weatherSlice";
+
+export default function App() {
+    const dispatch = useDispatch();
+
+    const town = useSelector((state) => state.weather.town);
+    const isLoading = useSelector((state) => state.weather.isLoading);
+    const weather = useSelector((state) => state.weather);
+    console.log(weather);
+
     useEffect(() => {
-        props.fetchWeather(props.weather);
+        dispatch(fetchWeather());
     }, []);
 
-    if (props.town[0].forecast.list) {
+    if (town[0].forecast.list) {
         var forecastByDay = [];
-        forecastByDay = geterateResult(props.town[0].forecast.list);
+        forecastByDay = geterateResult(town[0].forecast.list);
     }
 
     return (
         <div className="App">
             <Header />
-            {!props.isLoading && props.town[0].name === "" ? ( //если идет загрузка данных и поиск по городу не задан
+            {!isLoading && town[0].name === "" ? ( //если идет загрузка данных и поиск по городу не задан
                 <div className="list-of-city">
-                    <CityCardCurrent weather={props.weather} openCard={props.fetchSearchWeather} />
+                    <CityCardCurrent
+                        weather={weather}
+                        //   openCard={props.fetchSearchWeather}
+                    />
                     <Footer />
                 </div>
-            ) : props.town[0].name !== "" && forecastByDay.length > 0 ? ( // если задан поиск по городу, данные получены с сервера и
-                <CityPage town={props.town} forecastByDay={forecastByDay} />
+            ) : town[0].name !== "" && forecastByDay.length > 0 ? ( // если задан поиск по городу, данные получены с сервера и
+                <CityPage town={town} forecastByDay={forecastByDay} />
             ) : (
                 <Loader />
             )}
@@ -39,14 +50,14 @@ function App(props) {
     );
 }
 
-const mapStateToProps = (state) => ({
-    weather: state.citiesWeather.weather,
-    isLoading: state.citiesWeather.isLoading,
-    town: state.citiesWeather.town,
-});
-const mapDispatchToProps = {
-    fetchWeather,
-    fetchSearchWeather,
-};
+// const mapStateToProps = (state) => ({
+//     weather: state.weather.weather,
+//     isLoading: state.weather.isLoading,
+//     town: state.weather.town,
+// });
+// const mapDispatchToProps = {
+//     fetchWeather,
+//     fetchSearchWeather,
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
