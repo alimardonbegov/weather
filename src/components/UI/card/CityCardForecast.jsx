@@ -5,7 +5,7 @@ import water from "../../../images/water.svg";
 
 function CityCardForecast(props) {
     return props.forecastByDay.map((el) => {
-        const icon = `http://openweathermap.org/img/wn/${el.icon}@2x.png`;
+        const icon = `https://openweathermap.org/img/wn/${el.icon}@2x.png`;
         return (
             <div className="city_card forecast">
                 <div className="city-card-content">
