@@ -1,6 +1,6 @@
 The project was created in goal of study.
 
-Check that project by link: https://abegov-weather.herokuapp.com/
+Check that project by link: https://abegov-weather.web.app/
 
 There are lists of updates for the future:
 
